@@ -1,0 +1,24 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1008
+
+the ftplugin can detect whether the current record's format is
+correct,
+if the data count is wrong, it will produce a message:
+========================
+    The data count of this record(3) is wrong!
+========================
+in which the 3 is the line number of the record.
+if the checksum is absense, the message will be:
+========================
+This record looks have no checksum, press <C-K> to generate checksum for it
+========================
+If the checksum is present, but wrong, it will complain about:
+========================
+The Check sum is wrong!, should be: 0x27, Press <C-K> to correct it
+========================
+ the 0x27 is the right CheckSum for it.
+
+Anytime You can press <C-K> to correct the checksum of current record. regardless of whether the checksum is already contained in the recorder. but if the data count is incorrect, nothing will be done.
+
+With this plugin, one can easily modify existing s-record file, and then re-generate the checksum.
+:%norm ^K
+
